@@ -1,0 +1,53 @@
+                                         $$$**$$**$**$$**$** ( ~ RIFT M4STER ~ ) **$**$$**$**$$**$$$
+Everything Proxmox..
+
+                            Everything About Setting Up Proxmox W/Specialized Code & Steps For My Homelab Setup
+
+                                                Login 
+                                                  Username: root <- No Caps
+                                                  Password: Master Password
+
+
+    Supply's -
+    		1.USB Thumb Drive ( 16 GB - 32 GB )
+    		2.USB Installer ( Rufus )
+    		3.Proxmox VE.ISO ( Proxmox VE )
+
+  	Step 1.
+        Find USB Thumb Drive For Proxmox VE ISO Install.
+          Download USB Installer - https://rufus.ie
+          Download And Run - Rufus
+    Step 2.
+        Open Rufus 
+          Device = The Install Location - USB Thumb Drive 
+          Click The Select Button And Select Your Download Of Proxmox VE
+          Click Start
+    Step 3.
+        Install Proxmox " Check Note's "
+
+    Step 4.
+        Clear Up Drive Space
+          Click On Datacenter And Go To Stoarage 
+          Right Click And Delete local-lvm
+    Step 5.
+        Time For Some Code
+          Click On The Device Name ( ***-**-**-**-** )
+          Click On >_ Shell And ENTER The Fallowing
+       Code:
+          lvremove /dev/pve/data    (enter) y for Yes (enter)
+          lvresize -l +100%FREE /dev/pve/root    (enter)
+          resize2fs /dev/mapper/pve-root    (enter)
+    Step 6.
+        Update Proxmox
+      Code:
+          apt update && apt dist-upgrade    (enter)
+    Step 7.
+        Time To Remove That NO SUBSCRIPTION Pop Up
+        **$**$$**$$$*$$**$** Work In Progress **$**$$**$$$**$$**$**
+    Notes :
+
+        Setup Password Use Master Password Its Going To Be Open To The Internet  ( Easy Password = Easy To Hack )
+        Master Password Will Be Login Password..
+
+        Make Sure You Use .local ( Example - ServerName.local ) ( **-**-**-**-**.local )
+        NOTE!!! - Server Name = Name Of Server On Network & Device Name
