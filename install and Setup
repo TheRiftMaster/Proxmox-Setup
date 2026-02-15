@@ -34,13 +34,13 @@ Everything Proxmox..
           Click On The Device Name ( ***-**-**-**-** )
           Click On >_ Shell And ENTER The Fallowing
        Code:
-          lvremove /dev/pve/data    (enter) y for Yes (enter)
-          lvresize -l +100%FREE /dev/pve/root    (enter)
-          resize2fs /dev/mapper/pve-root    (enter)
+        *-* lvremove /dev/pve/data    (enter) y for Yes (enter)
+        *-* lvresize -l +100%FREE /dev/pve/root    (enter)
+        *-* resize2fs /dev/mapper/pve-root    (enter)
     Step 6.
         Update Proxmox
       Code:
-          apt update && apt dist-upgrade    (enter)
+        *-* apt update && apt dist-upgrade    (enter)
     Step 7.
         Time To Remove That NO SUBSCRIPTION Pop Up
         **$**$$**$$$*$$**$** Work In Progress **$**$$**$$$**$$**$**
